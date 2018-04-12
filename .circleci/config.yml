@@ -1,0 +1,16 @@
+version: 2
+jobs:
+   build:
+     docker:
+       - image: circleci/python:3.6.1
+     
+     steps:
+       - checkout
+       - run: 
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+            pip install ansible virtualenv
+            sudo apt-get update && sudo apt-get install jq
+            
