@@ -15,5 +15,6 @@ jobs:
             sudo apt-get update && sudo apt-get install jq
             python manage.py migrate&
             python manage.py runserver&
+            ansible-playbook /helloworld/ansible/test.yml 
 
             
