@@ -13,8 +13,7 @@ jobs:
             pip install -r requirements.txt
             pip install ansible virtualenv
             sudo apt-get update && sudo apt-get install jq
-            sudo pip install -r requirements.txt
             python manage.py migrate&
             python manage.py runserver&
-            wget http://127.0.0.1:8000/
+
             
