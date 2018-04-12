@@ -18,7 +18,7 @@ jobs:
             
    build-prod:
      docker:
-      - image: circleci/python:3.6.1
+       - image: circleci/python:3.6.1
       
       steps:
        - checkout
@@ -35,8 +35,5 @@ workflows:
       - build-prod:
           requires:
             - build
-            
-          filters:
-            branches:
-              only: master
+
             
