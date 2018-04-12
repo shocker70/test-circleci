@@ -11,8 +11,6 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
-            pip install ansible virtualenv
-            sudo apt-get update && sudo apt-get install jq
             python manage.py migrate&
             python manage.py runserver&
             
@@ -24,6 +22,10 @@ jobs:
        - checkout
        - run: 
           command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install ansible virtualenv
+            sudo apt-get update && sudo apt-get install jq
             ansible-playbook test.yml 
 
 
