@@ -68,7 +68,7 @@ I had a big advantaje on this part because CircleCI has an AMI on AWS, so i made
 
 The problem here is that i need a enterprise trial of CircleCI to be able to end the instalation on the machine, actually im waiting for them to answer me with the key for the  enterprise trial.
 
-Meanwile as i cant continue with the instalation on the ec2 instance, i configured in their cloud the circleCI to work with a mini HelloWorld in Django i copied from a GIT repo.
+Meanwile as i cant continue with the instalation on the ec2 instance, i configured in their cloud the circleCI to work with a mini HelloWorld in Django i FORKED from a public GIT repo.
 
    ( I will send you by mail also user/pass for login to circleci )
    
