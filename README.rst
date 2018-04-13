@@ -9,7 +9,8 @@ When I started the first tools i thought that could match the team workload wher
     + Jenkins
 
 Lets have a closer look at each one:
-   TravisCI:
+  
+    TravisCI:
 
 PROS:
 This tool is based on cloud solution, and runs over docker to execute the tests. 
