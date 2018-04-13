@@ -33,9 +33,15 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - build
+      - build:
+          filters:
+            branches:
+              only: master
       - build-prod:
           requires:
             - build
+          filters:
+            branches:
+              only: master
 
             
