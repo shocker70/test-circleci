@@ -28,6 +28,7 @@ jobs:
             pip install ansible virtualenv
             sudo apt-get update && sudo apt-get install jq
             ansible-playbook test.yml 
+            
             echo "MASTER BRANCH!"
 
 
