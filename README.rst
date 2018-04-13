@@ -1,6 +1,7 @@
 helloworld
 ==========
 
+
 A Django 'hello world' example.
 
 For run this example need to install Django
