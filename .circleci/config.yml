@@ -13,7 +13,7 @@ jobs:
             pip install -r requirements.txt
             python manage.py migrate&
             python manage.py runserver&
-            echo "MASTER BRANCH!"
+
             
    build-prod:
      docker:
@@ -28,9 +28,6 @@ jobs:
             pip install ansible virtualenv
             sudo apt-get update && sudo apt-get install jq
             ansible-playbook test.yml 
-            
-            echo "MASTER BRANCH!"
-
 
 workflows:
   version: 2
