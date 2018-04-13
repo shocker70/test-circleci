@@ -8,11 +8,7 @@ jobs:
        - checkout
        - run: 
           command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install -r requirements.txt
-            python manage.py migrate&
-            python manage.py runserver&
+                echo "test"
             
    build-prod:
      docker:
@@ -36,10 +32,10 @@ workflows:
       - build:
           filters:
             branches:
-              only: master
+              only: test
       - build-prod:
           requires:
             - build
           filters:
             branches:
-              only: master
+              only: test
