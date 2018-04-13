@@ -3,6 +3,6 @@
     user: root
     gather_facts: no
     tasks:
-    - shell: echo 'test'
+    - shell: echo 'OK'
       register: foo
-    - debug: msg="the echo was  test {{ foo.stdout }}"
+    - debug: msg="the echo was test {{ foo.stdout }}"
