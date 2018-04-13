@@ -9,20 +9,24 @@ When I started the first tools i thought that could match the team workload wher
     + Jenkins
 
 Lets have a closer look at each one:
------ TravisCI:
-   PROS:
+   TravisCI:
+
+PROS:
 This tool is based on cloud solution, and runs over docker to execute the tests. 
 One of the strong sides of TravisCI i consider is that it supports build matrix, allowing you to run test with different versions of the same lenguaje at the same time.
-   CONS:
+
+CONS:
 Well travisCi also has some bad things, it has no free enterprise plan, and prices are quite expensive, and for me one of the worst things it has is that there are not too many 3rd partys that support it.
 
------- CircleCI:
+    CircleCI:
 CircleCI and TravisCI are quite similar.
-    PROS:
+
+PROS:
 CircleCI is also cloud Base but it offers the chance to run it on cloud or on your own datacenter. ( But need to ask for the enterprise free trial and takes one day minimun, this slowed me down a little bit )
 CircleCI also runs over docker to execute tests.
 It also alows you to connect via ssh to the dockers running for a more in depth search of the problem.
-    CONS:
+
+CONS:
 It dosent support a great amount of programing lenguajes.
 
 
