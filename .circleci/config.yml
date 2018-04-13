@@ -8,7 +8,12 @@ jobs:
        - checkout
        - run: 
           command: |
-                echo "test"
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+            python manage.py migrate&
+            python manage.py runserver&
+            echo "TEST BRANCH!"
             
    build-prod:
      docker:
@@ -23,6 +28,7 @@ jobs:
             pip install ansible virtualenv
             sudo apt-get update && sudo apt-get install jq
             ansible-playbook test.yml 
+            echo "TEST BRANCH!"
 
 
 workflows:
