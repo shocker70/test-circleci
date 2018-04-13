@@ -5,4 +5,4 @@
     tasks:
     - shell: echo 'OK'
       register: foo
-    - debug: msg="the echo was test {{ foo.stdout }}"
+    - debug: msg="the echo was{{ foo.stdout }}"
