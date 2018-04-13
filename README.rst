@@ -1,8 +1,45 @@
-helloworld
-==========
+
+FIRST PART OF THE TEST:
+=======================
+For the first part of the test I had to studdy the different tools that i could use for CI, not being able to use Attlasian tools.
+
+When I started the first tools i thought that could match the team workload where:
+    + Travis CI
+    + CircleCI 
+    + Jenkins
+
+Lets have a closer look at each one:
+----- TravisCI:
+   PROS:
+This tool is based on cloud solution, and runs over docker to execute the tests. 
+One of the strong sides of TravisCI i consider is that it supports build matrix, allowing you to run test with different versions of the same lenguaje at the same time.
+   CONS:
+Well travisCi also has some bad things, it has no free enterprise plan, and prices are quite expensive, and for me one of the worst things it has is that there are not too many 3rd partys that support it.
+
+------ CircleCI:
+CircleCI and TravisCI are quite similar.
+    PROS:
+CircleCI is also cloud Base but it offers the chance to run it on cloud or on your own datacenter. ( But need to ask for the enterprise free trial and takes one day minimun, this slowed me down a little bit )
+CircleCI also runs over docker to execute tests.
+It also alows you to connect via ssh to the dockers running for a more in depth search of the problem.
+    CONS:
+It dosent support a great amount of programing lenguajes.
+
+
+----- Jenkins:
+Jenkins whas also one of the solutions i could aproach, but i wanted to test something different, and Jenkins requires a big configuration that may take longer to make it work properly.
+
+
+So alfter this little ressume, i thought that the best tool whas CircleCI, the user interface looked very friendly and its high customizable. One of the biggest reason i thought that CircleCI 
+will be better than TravisCI is that its supported by much more 3rd partys and this will alow the project to grow with many more chances.
+
+
+SOLUCION:
 
 
 
+
+RUN HELLOWORLD PROJECT:
 
 
 A Django 'hello world' example.
