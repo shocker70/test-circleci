@@ -36,12 +36,12 @@ workflows:
       - build:
           filters:
             branches:
-              only: master
+              only: test
       - build-prod:
           requires:
             - build
           filters:
             branches:
-              only: master
+              only: test
 
             
