@@ -43,3 +43,10 @@ workflows:
           filters:
             branches:
               only: test
+              
+  build_prod:
+    jobs:
+      - build-prod:
+          filters:
+            branches:
+              only: master
