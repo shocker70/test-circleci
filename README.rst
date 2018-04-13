@@ -50,3 +50,6 @@ How it will work:
 
 *For the 6th step: On this example i dont deploy the code into any machine but i run a little ansible play book just to show that tools like ansible can be used to automate deploys via circleci.
 
+Important: One of the ideas also is that the code that is just commited by the developer can trigger a CircleCI workflow and be tested immediatly, making errors visible faster and eassiers.
+
+
