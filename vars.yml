@@ -18,10 +18,10 @@ wsgi_module: hello.wsgi
 pythonpath: "{{ install_root }}/{{ project_name }}/helloworld/apps"
 
 # the git repository URL for the project
-project_repo: git@github.com:technivore/django-hello-world.git
+project_repo: git clone https://fran042@bitbucket.org/fran042/helloworld.git
     
 # a private key that has access to the repository URL
-ssh_private_key: ~/.ssh/id_rsa
+# ssh_private_key: ~/.ssh/id_rsa
 
 # The value of your django project's STATIC_ROOT settings.
 # This will be the directory that django's `collectstatic` management command
@@ -31,7 +31,7 @@ ssh_private_key: ~/.ssh/id_rsa
 static_root: "{{ install_root }}/{{ project_name }}/static"
 
 # the dns name or names (space separated) for your server
-server_name: django-hello.com www.django-hello.com
+server_name: django-helloworld.com www.django-helloworld.com
 
 # database setup. Note that because this playbook doesn't touch the default 
 # postgres pg_hba.conf file, we use local password-based authentication for
