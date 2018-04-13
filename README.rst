@@ -52,4 +52,31 @@ How it will work:
 
 Important: One of the ideas also is that the code that is just commited by the developer can trigger a CircleCI workflow and be tested immediatly, making errors visible faster and eassiers.
 
+SECOND PART OF THE TEST:
+========================
+"" For the second part of the test i had some confusion, at first i thought that the idea was to make the deploy of the code once it passed the test via CircleCi.
+The idea i had was to run a ansibleplaybook that did the deploy if all the tests passed.""
+
+For the second part of the test i had to make a deploy of circleCI on the cloud.
+I have a freetier account on AWS so i used it to make the deploy on a ec2  minimal instance. And decided to use Ansible as the deployment tool.
+
+I had a big advantaje on this part because CircleCI has an AMI on AWS, so i made with Ansible a playbook to deploy the EC2 instance with the desired AMI.
+
+ (The playbook to download and run in a compatible Ansible env is ec2instance.yml , also need to copy hosts file  and i will send you by mail the key
+ for the used i made in AWS so you can reproduce the deploy of the machine)
+
+
+The problem here is that i need a enterprise trial of CircleCI to be able to end the instalation on the machine, actually im waiting for them to answer me with the key for the  enterprise trial.
+
+Meanwile as i cant continue with the instalation on the ec2 instance, i configured in their cloud the circleCI to work with a mini HelloWorld in Django i copied from a GIT repo.
+
+   ( I will send you by mail also user/pass for login to circleci )
+   
+I configured CircleCi to run tests when a change in TEST repo is made, it will run the django app and a basic ansibleplaybook. And when the MASTER branch recieves a change it will run only the playbook.
+The code is in .circleci/config.yml
+
+
+
+
+
 
