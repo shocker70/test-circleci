@@ -52,6 +52,8 @@ How it will work:
 
 Important: One of the ideas also is that the code that is just commited by the developer can trigger a CircleCI workflow and be tested immediatly, making errors visible faster and eassiers.
 
+
+
 SECOND PART OF THE TEST:
 ========================
 "" For the second part of the test i had some confusion, at first i thought that the idea was to make the deploy of the code once it passed the test via CircleCi.
@@ -76,7 +78,38 @@ I configured CircleCi to run tests when a change in TEST repo is made, it will r
 The code is in .circleci/config.yml
 
 
+STEPS: ( actually waiting for the enterprise trial to make it work on ec2, so i configured it on their cloud, its exactly the same )
 
+
+1. In the this git repo, you will find the ec2deploy.yml and hosts file, both required to execute the Ansble playbook to deploy a ec2 instance with a configured security group.
+HOWTO:  You will need to exectute the following commands:
+
+
+2. I actually have the aws machine running, but with a security group that blocks the access, please send me  a message so i grant access.
+
+
+3. Once you have access to the machine ( actually dont have the lisence ) you will see it asks for .rly file ( the trial for the enterprise )
+
+So taking into account i cant end the conf on the aws machine, i continued on the web wich is exactly the same:
+
+Go to:
+https://circleci.com/vcs-authorize/ 
+
+Log in with Bitbucket:
+Add your bitbucket @user that I added on this Bitbucket project.
+
+
+On the left side select PROJECTS and press Set Up Project:
+test-onestick
+
+The first time you set it up it will imediatly start running a test, you can see it on the Builds window.
+
+
+
+4. The conf file of the circleCi is located at .circleci/config.yml:
+
+This conf runs with Workflows and is configured to run diff workflows depending on the branch.
+For the TEST branch i also made the second job depend on the first one so if the first one fails the second wont be executed.
 
 
 
