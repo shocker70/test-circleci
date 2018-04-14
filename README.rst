@@ -42,11 +42,17 @@ will be better than TravisCI is that its supported by much more 3rd partys and t
 
 How it will work:
 1. The developers will make changes on the local version, once they made them commit their changes.
+
 2. Once the Account manager merges the changes into the STAGING Branch named ( test ) in my example, the repo will send a hook to CircleCI.
+
 3. Once CircleCI recieves the hook it will start running the tests, syntax check and others
+
 4. Now all the pre-configured testing can run in cirlce ci automatically.
+
 5. If a test fails, circleCI shows in red, and can alert the team.
+
 6. If all is OK, then when the STAGING branch is merged to the MASTER(prod) circleCI can make the deploy into the dessired servers.
+
 
 *For the 6th step: On this example i dont deploy the code into any machine but i run a little ansible play book just to show that tools like ansible can be used to automate deploys via circleci.
 
@@ -62,29 +68,25 @@ The idea i had was to run a ansibleplaybook that did the deploy if all the tests
 For the second part of the test i had to make a deploy of circleCI on the cloud.
 I have a freetier account on AWS so i used it to make the deploy on a ec2  minimal instance. And decided to use Ansible as the deployment tool.
 
-I had a big advantaje on this part because CircleCI has an AMI on AWS, so i made with Ansible a playbook to deploy the EC2 instance with the desired AMI.
-
- (The playbook to download and run in a compatible Ansible env is ec2instance.yml , also need to copy hosts file  and i will send you by mail the key
- for the used i made in AWS so you can reproduce the deploy of the machine)
+I had a big advantaje on this part because CircleCI has an AMI on AWS, so i made with Ansible a playbook to deploy the EC2 instance with the desired AMI, so the playbook launches a EC2 instance
+and creates a Security group with some special ports oppen for CircleCi software to run.
 
 
 The problem here is that i need a enterprise trial of CircleCI to be able to end the instalation on the machine, actually im waiting for them to answer me with the key for the  enterprise trial.
 
 Meanwile as i cant continue with the instalation on the ec2 instance, i configured in their cloud the circleCI to work with a mini HelloWorld in Django i FORKED from a public GIT repo.
-
-   ( I will send you by mail also user/pass for login to circleci )
-   
-I configured CircleCi to run tests when a change in TEST repo is made, it will run the django app and a basic ansibleplaybook. And when the MASTER branch recieves a change it will run only the playbook.
+  
+I configured CircleCi to run tests when a change in TEST repo is made, it will run the django app and a basic ansibleplaybook. When the MASTER branch recieves a change it will run only the playbook.
 The code is in .circleci/config.yml
 
 
 STEPS: ( actually waiting for the enterprise trial to make it work on ec2, so i configured it on their cloud, its exactly the same )
 
 
-1. In the this git repo, you will find the ec2deploy.yml and hosts file, both required to execute the Ansble playbook to deploy a ec2 instance with a configured security group.
+1. In the git repo, you will find the ec2deploy.yml and hosts file, both required to execute the Ansble playbook to deploy a ec2 instance with a configured security group.
 IMPORTANT:
  
- In order to make the ansibleplaybook you need to create a user in AWS and add this local variables and create access key for it, then add tham as local variables:
+ In order to make the ansibleplaybook you need to create a user in AWS and add this local variables and create access key for it, then add them as local variables:
 
  export AWS_ACCESS_KEY_ID=""
  export AWS_SECRET_ACCESS_KEY=""
