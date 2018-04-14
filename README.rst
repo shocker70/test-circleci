@@ -82,8 +82,24 @@ STEPS: ( actually waiting for the enterprise trial to make it work on ec2, so i 
 
 
 1. In the this git repo, you will find the ec2deploy.yml and hosts file, both required to execute the Ansble playbook to deploy a ec2 instance with a configured security group.
-HOWTO:  You will need to exectute the following commands:
+IMPORTANT:
+ 
+ In order to make the ansibleplaybook you need to create a user in AWS and add this local variables and create access key for it, then add tham as local variables:
 
+ export AWS_ACCESS_KEY_ID=""
+ export AWS_SECRET_ACCESS_KEY=""
+ 
+ Install:
+ 
+ sudo pip install --upgrade pip
+ sudo pip install boto
+ sudo yum install ansible
+ sudo pip install boto3
+ 
+ Execute:
+ 
+ ansible-playbook -i ./hosts ec2instance.yml
+ 
 
 2. I actually have the aws machine running, but with a security group that blocks the access, please send me  a message so i grant access.
 
