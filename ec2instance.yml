@@ -1,0 +1,55 @@
+---
+  - name: Deploy EC2 instance
+    hosts: local
+    connection: local
+    gather_facts: False
+    tags: provisioning
+
+    vars:
+      instance_type: t2.micro
+      security_group: cicleci2-group # Nombre del secgroup
+      image: ami-cb6f1add # Utilizo AMI de Circleci.
+      keypair: deploy-ec2 # Creo dicha key en ec2 y la gasto para la maquina.
+      region: us-east-1 # Change the Region
+      count: 1
+
+    tasks:
+
+      - name: Crear secgroup
+        local_action: 
+          module: ec2_group
+          name: "{{ security_group }}"
+          description: secgroup para cicleci
+          region: "{{ region }}"
+          rules:
+            - proto: tcp
+              from_port: 22
+              to_port: 22
+              cidr_ip: 0.0.0.0/0
+            - proto: tcp
+              from_port: 80
+              to_port: 80
+              cidr_ip: 0.0.0.0/0
+            - proto: tcp
+              from_port: 8800
+              to_port: 8800
+              cidr_ip: 0.0.0.0/0
+            - proto: tcp
+              from_port: 443
+              to_port: 443
+              cidr_ip: 0.0.0.0/0
+          rules_egress:
+            - proto: all
+              cidr_ip: 0.0.0.0/0
+        register: basic_firewall
+
+      - name: EC2instance creacion
+        local_action: ec2
+                      group={{ security_group }}
+                      instance_type={{ instance_type}}
+                      image={{ image }}
+                      wait=true
+                      region={{ region }}
+                      keypair={{ keypair }}
+                      count={{count}}
+        register: ec2
