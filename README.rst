@@ -1,2 +1,8 @@
 
-Mini workflow, works with 2 branches in Bitbucket ( test and master )  to automate testing and deploy with circleCi tool.
+Continious Integration with CircleCI and Bitbucket
+
+Requieres two branches in bitbucket, [ Master ] and [ test ], being Test a branch of Master.
+
+When a [push] to Test branch happens, a automated test runs in CircleCI.
+
+If CicleCI test runs correctly, 1EC istance is deployed in AWS.
