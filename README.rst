@@ -1,6 +1,8 @@
 
 Continious Integration with CircleCI and Bitbucket
 
+Basic HelloWorld Django application running. 
+
 Requieres two branches in bitbucket, [ Master ] and [ test ], being Test a branch of Master.
 
 When a [push] to Test branch happens, a automated test runs in CircleCI.
