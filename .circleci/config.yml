@@ -37,12 +37,12 @@ workflows:
           filters:
             branches:
               only: test
-      - build-prod:
-          requires:
-            - build
-          filters:
-            branches:
-              only: test
+#      - build-prod:
+#          requires:
+#            - build
+#          filters:
+#            branches:
+#              only: test
               
   build_prod:
     jobs:
