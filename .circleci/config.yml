@@ -50,6 +50,5 @@ workflows:
       - build-prod:
           filters:
             branches:
-              only:
-               - master
-               - /helloworld/
+               ignore : /.*/
+               only: master       
