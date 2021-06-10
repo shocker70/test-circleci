@@ -32,7 +32,7 @@ setup(
     platforms=['OS Independent'],
     classifiers=CLASSIFIERS,
     install_requires=[
-        'Django==1.9.4',
+        'Django==2.2.24',
     ],
     packages=find_packages(exclude=["project","project.*"]),
     include_package_data=True,
